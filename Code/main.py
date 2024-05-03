@@ -122,7 +122,7 @@ def run_FedFA():
 
     print("Start server")
     # 
-    global_modelfa, similarity_dictfa, client_modelsfa, loss_dictfa, clients_indexfa, acc_listfa = server_feature.fedfa_anchorloss(testset, dict_users_test, encryption_mask, similarity = similarity, test_global_model_accuracy = True)
+    global_modelfa, similarity_dictfa, client_modelsfa, loss_dictfa, clients_indexfa, acc_listfa = server_feature.fedfa_anchorloss(testset, dict_users_test, encryption_mask, similarity = False, test_global_model_accuracy = True)
     print("End Server")
     
     torch.save(acc_listfa,"results/Test/label skew/cifar10/fedfa/seed{}/acc_listfa_{}E_{}class.pt".format(args.seed,args.E,C))
