@@ -88,7 +88,7 @@ def decrypt_by_para(args, global_round, layer_list, shape_list, k, model):
             else:
                 decrypted_layer = layer_encrypted
             #decrypted_layer = decryption_to_plain(layer_encrypted)
-            #decrypted_layers.append(decrypted_layer)
+            decrypted_layers.append(decrypted_layer)
         
         reshaped_tensors = []
         for layer_data, shape in zip(decrypted_layers, shape_list):
