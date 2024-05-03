@@ -112,6 +112,8 @@ synthetic_dict_users = trainset_sampling_label(args, synthetic_dataset, trainset
 # initiate the server with defined model and dataset
 serverz = server.Server(args, specf_model, trainset, synthetic_dataset.dataset_split, dict_users_train, synthetic_dict_users)
 print("global_model: ", serverz.nn.state_dict)
+total_params = sum(p.numel() for p in serverz.nn.parameters())
+print("Total number of parameters:", total_params)
 
 def run_FedFA():
     print("Enter FedFA!")
